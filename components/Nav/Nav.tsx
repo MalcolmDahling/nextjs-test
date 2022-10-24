@@ -15,7 +15,7 @@ function Nav(){
                 </li>
 
                 <li>
-                    <Link href='/other'>Other</Link>
+                    <Link href='/posts'>Posts</Link>
                 </li>
             </ul>
         </nav>
