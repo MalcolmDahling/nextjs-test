@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 
 function Layout({children}:any){
 
+    
     return(
         <div className={styles.wrapper}>
             <Head>

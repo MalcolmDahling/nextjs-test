@@ -7,11 +7,11 @@ import { IPost } from '../models/IPost';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-    const [posts, setPosts] = useState<IPost>();
+    const [posts, setPosts] = useState<IPost[]>();
 
     useEffect(() => {
 
-        axios.get('https://jsonplaceholder.typicode.com/posts/1')
+        axios.get<IPost[]>('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
                 console.log(res.data);
                 setPosts(res.data);
@@ -19,11 +19,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, []);
 
     return(
-      <>
-          <Layout>
-              <Component {...pageProps} />
-          </Layout>
-      </>
+        <>
+            <Layout>
+                <Component {...pageProps} posts={posts} />
+            </Layout>
+        </>
     );
 }
 
